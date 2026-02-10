@@ -23,7 +23,7 @@ const firebaseConfig = {
   projectId: "registro-ua",
   storageBucket: "registro-ua.firebasestorage.app",
   messagingSenderId: "32518463118",
-  appId: “1:32518463118:web:cde63be93d4ca07623f3df",
+  appId: "1:32518463118:web:cde63be93d4ca07623f3df",
 };
 
 // Inicialización segura
