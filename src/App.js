@@ -23,7 +23,7 @@ const firebaseConfig = {
   projectId: "registro-ua",
   storageBucket: "registro-ua.firebasestorage.app",
   messagingSenderId: "32518463118",
-  appId: "1:32518463118:web:cde63be93d4ca07623f3df"
+  appId: “1:32518463118:web:cde63be93d4ca07623f3df",
 };
 
 // Inicialización segura
@@ -135,6 +135,13 @@ const PublicRegistration = ({ onViewChange, isConnected }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
+    // NUEVA REGLA: Restricción estricta de 5 dígitos para campos numéricos de causa
+    // Esto evita que el usuario escriba más de 5 números en "No. Proceso" o "Código Personalizado"
+    if ((name === 'causaNumber' || name === 'causaCodeCustom') && value.length > 5) {
+      return; 
+    }
+
     const shouldUpper = ['fullName', 'subjectCustom', 'fiscalia', 'locker'].includes(name);
     setFormData(prev => ({
       ...prev,
